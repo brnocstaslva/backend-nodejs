@@ -40,6 +40,17 @@ app.put('/users/:id', (request, response) => {
     return response.json(user)
 })
 
+app.delete('/users/:id', (request, response) => {
+    const { id } = request.params
+
+    const userIndex = users.findIndex(user => user.id === id)
+    if(userIndex < 0) response.status(404).json({ error: 'User not found.'})
+
+    users.splice(userIndex, 1)
+
+    return response.status(204).send()
+})
+
 app.listen('3333', () => {
     console.log('Backend started!')
 })
