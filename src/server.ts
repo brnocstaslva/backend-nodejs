@@ -10,6 +10,10 @@ interface Users {
 
 const users: Users[] = []
 
+app.get('/users', (esquest, response) => {
+    return response.json({ users })
+})
+
 app.listen('3333', () => {
     console.log('Backend started!')
 })
