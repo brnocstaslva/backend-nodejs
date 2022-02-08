@@ -293,7 +293,7 @@ bash / cmd
 ```bash
 npm install uuid
 
-npm install @type/uuid -d
+npm install @types/uuid -d
 ```
 
 server.ts
