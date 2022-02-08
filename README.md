@@ -273,10 +273,10 @@ const users: Users[] = []
 
 ### Passo 5.3
 
-Para a rota de listagem precisamos criar para acessar todos os usuários de ```users```, é:
+Para a rota de listagem precisamos informar na resposta todos os usuários em ```users```:
 
 ```ts
-app.get('/users/', (request, response) => {
+app.get('/users', (request, response) => {
     // retornar os usuários
     return response.json({ users })
 })
