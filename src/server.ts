@@ -24,8 +24,6 @@ app.post('/users', (request, response) => {
 
     users.push(user)
 
-    console.log(user)
-    
     return response.json(user)
 })
 
