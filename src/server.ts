@@ -25,6 +25,21 @@ app.post('/users/:id', (request, response) => {
     return response.json(user)
 })
 
+app.put('/users/:id', (request, response) => {
+    const { id } = request.params
+
+    const { name, email } = request.body
+
+    const userIndex = users.findIndex(user => user.id === id)
+    if(userIndex < 0) response.status(404).json({ error: 'User not found.'})
+
+    const user = { id, name, email }
+    
+    users[userIndex] = user
+
+    return response.json(user)
+})
+
 app.listen('3333', () => {
     console.log('Backend started!')
 })
